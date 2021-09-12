@@ -45,16 +45,18 @@ const selectItem = (event, img) => {
     sliders.push(img);
   } 
   else if(item !== -1){
-    for( let i = 0; i < sliders.length; i++){ 
+  //   for( let i = 0; i < sliders.length; i++){ 
     
-      if ( sliders[i] === img) { 
+  //     if ( sliders[i] === img) { 
+  //       console.log(i);
   
-        sliders.splice(i, 1); 
-      }
+  //       sliders.splice(i, 1); 
+  //     }
   
-  }
-    element.classList.remove('added');
-    
+  // }
+  const finded = sliders.find(data=>data===img);
+  sliders.splice(sliders.indexOf(finded), 1);
+    element.classList.remove('added');    
   }
 }
 var timer
